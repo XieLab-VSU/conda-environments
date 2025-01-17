@@ -1,0 +1,17 @@
+# This conda environment setup will allow you to basecall raw pod5 files from ONT sequencing \
+# QC the reads, and run a de novo genome assembly.
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - snakemake-minimal >=8.4.4
+  # mpl for graph visualization
+  - matplotlib
+  # Flye requires Python 3.5+, C++ compiler, GNU make, Git, Core OS dev headers (ie. zlib)
+  # Conda installation of Flye package also includes samtools, minimap2, lemon, intervaltree, libcuckoo
+  - flye 
+  - pip:
+    # nanoplot for read QC (can also using dorado summary)
+    - Nanoplot
